@@ -1,0 +1,202 @@
+
+header.real-header {
+    padding: 10px 0px;
+    background: #ffffff;
+    font-family: $mainfont;
+
+    .logo {
+        font-size: 1rem;
+        line-height: 1.5;
+        vertical-align: middle;
+
+        img {
+            height: 50px;
+            @include pad-width {
+                width: 100%;
+            }
+            @include phone-width{
+                height: 35px;
+            }
+        }
+    }
+
+    .container {
+        padding: 0px;
+
+        @include pad-width {
+            padding: 0px 15px;
+        }
+
+        @include phone-width {
+            padding: 0px 0px;
+        }
+    }
+
+    .mobile_nav {
+        @include phone-width {
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+    }
+
+
+
+    input {
+        display: none;
+    }
+
+    label {
+        margin: 0 auto !important;
+        cursor: pointer;
+    }
+
+    div {
+        &.row {
+            justify-content: space-between;
+        }
+
+        &.col {
+            @include bigphone-width {
+                text-align: center;
+                margin: 0px auto;
+                padding-right: 10px;
+            }
+
+            @include phone-width {
+                text-align: center;
+                margin: 0px auto;
+                padding-right: 10px;
+            }
+        }
+
+        &.col-2 {
+            font-size: 6vmin;
+            max-height: 5vmin;
+            position: relative;
+
+            label {
+                position: absolute;
+                left: 1vmin;
+                top: -2vmin;
+            }
+        }
+
+        &.mobile-menu {
+            transition: all .25s;
+            pointer-events: none;
+            opacity: 0;
+            font-size: 3vmin;
+            position: absolute;
+            z-index: 9999;
+            left: -7px;
+            top: 6.8vmin;
+            min-width: 49vmin;
+            height: 0px;
+            display: flex;
+            justify-content: flex-end;
+
+            @include pc-width {
+                left: -37px;
+                top: 40px;
+            }
+
+            @include pad-width {
+                left: -20px;
+                top: 40px;
+            }
+
+            @include bigphone-width {
+                left: -17px;
+                top: 35px;
+            }
+
+            @include phone-width {
+                left: -19px;
+                top: 37px;
+            }
+
+            div#bgafter {
+                z-index: -1;
+                background: rgba(68, 64, 65, 0.8);
+                position: absolute;
+                height: 100%;
+                width: 1px;
+                top: 7px;
+                left: 4px;
+                content: ' ';
+            }
+
+            a {
+                text-decoration: none;
+                display: list-item;
+
+                &:nth-of-type(1),
+                &:nth-of-type(2),
+                &:nth-of-type(3),
+                &:nth-of-type(4),
+                &:nth-of-type(5),
+                &:nth-of-type(6) {
+                    position: relative;
+                }
+
+                &:nth-of-type(1):hover li,
+                &:nth-of-type(2):hover li,
+                &:nth-of-type(3):hover li,
+                &:nth-of-type(4):hover li,
+                &:nth-of-type(5):hover li,
+                &:nth-of-type(6):hover li {
+                    background: #0091ec;
+                    color: white !important;
+                }
+
+                &:nth-of-type(1):hover li i,
+                &:nth-of-type(2):hover li i,
+                &:nth-of-type(3):hover li i,
+                &:nth-of-type(4):hover li i,
+                &:nth-of-type(5):hover li i,
+                &:nth-of-type(6):hover li i {
+                    color: white !important;
+                }
+
+                &:nth-of-type(1):after,
+                &:nth-of-type(2):after,
+                &:nth-of-type(3):after,
+                &:nth-of-type(4):after,
+                &:nth-of-type(5):after,
+                &:nth-of-type(6):after {
+                    position: absolute;
+                    content: ' ';
+                    background: rgba(128, 128, 128, 0.5);
+                    height: 1px;
+                    width: 85%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    bottom: 0px;
+                }
+            }
+
+            ul {
+                background: rgba(255, 255, 255, 0.9);
+                width: 100%;
+                font-weight: bolder;
+
+                li {
+                    padding: 12px 4vmin;
+                    color: #444041;
+                    display: flex;
+                    justify-content: space-between;
+
+                    i {
+                        color: #c9cbc8;
+                    }
+                }
+            }
+        }
+
+        input#newbar:checked~div.mobile-menu {
+            pointer-events: all;
+            opacity: 1;
+            overflow: unset;
+        }
+    }
+}

@@ -1,0 +1,70 @@
+$hugebigpc-media:2000px;
+$superbigpc-media:1999.98px;
+$superbigpcs-media:1600px;
+$morebigpc-media:1599.98px;
+$morebigpcs-media:1440px;
+$bigpc-media:1439.98px;
+$bigpcs-media:1200px;
+$pc-media:1199.98px;
+$pcs-media:992px;
+$pad-media:991.98px;
+$pads-media:768px;
+$bigphone-media:767.98px;
+$bigphones-media:576px;
+$phones-media:575px;
+$iphonex-media:413.98px;
+$iphonexs-media:320px;
+
+@mixin hugebigpc-width() {
+    @media all and (min-width: $hugebigpc-media) {
+        @content;
+    }
+}
+
+@mixin superbigpc-width() {
+    @media all and (min-width: $superbigpcs-media) and (max-width: $superbigpc-media) {
+        @content;
+    }
+}
+
+@mixin morebigpc-width() {
+    @media all and (min-width: $morebigpcs-media) and (max-width: $morebigpc-media) {
+        @content;
+    }
+}
+
+@mixin bigpc-width() {
+    @media all and (min-width: $bigpcs-media) and (max-width: $bigpc-media) {
+        @content;
+    }
+}
+
+@mixin pc-width() {
+    @media all and (min-width: $pcs-media) and (max-width: $pc-media) {
+        @content;
+    }
+}
+
+@mixin pad-width() {
+    @media all and (min-width: $pads-media) and (max-width:$pad-media) {
+        @content;
+    }
+}
+
+@mixin bigphone-width() {
+    @media all and (min-width: $bigphones-media) and (max-width:$bigphone-media) {
+        @content;
+    }
+}
+
+@mixin phone-width() {
+    @media all and (max-width: $phones-media) {
+        @content;
+    }
+}
+
+@mixin phonexs-width() {
+    @media all and (max-width: $iphonexs-media) {
+        @content;
+    }
+}
